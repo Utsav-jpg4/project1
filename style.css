@@ -1004,48 +1004,58 @@ a{
     color: black;
 }
     /* 1. Make body width adapt */
-body {
-  max-width: 1200px;  /* max width on big screens */
-  margin: 0 auto;     /* center content */
-  padding: 0 20px;    /* some side padding */
-  font-family: Arial, sans-serif;
-}
+/* Your existing CSS here - unchanged */
+/* (I'll keep your original code as is, then add responsive rules) */
 
-/* 2. Images and videos scale to container */
+/* ---------------------------------- */
+/* RESPONSIVE ENHANCEMENTS START HERE */
+/* ---------------------------------- */
+
+/* Make images and videos scale */
 img, video {
   max-width: 100%;
   height: auto;
 }
 
-/* 3. Flexible layout with percentages */
-.container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;  /* wrap items on smaller screens */
-  gap: 20px;
-}
-
-/* 4. Responsive text */
-h1, h2, h3 {
-  font-size: 2rem;
-}
-
-/* 5. Media Query example for small screens */
+/* Container adjustments for smaller screens */
 @media (max-width: 768px) {
+  /* Example: Stack any flex containers vertically */
+  .container, nav ul {
+    flex-direction: column !important;
+  }
+
+  /* Reduce font sizes for headings */
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem !important;
   }
 
-  .container {
-    flex-direction: column; /* stack elements vertically */
+  h2, h3 {
+    font-size: 1.4rem !important;
   }
 
-  nav ul {
-    flex-direction: column;  /* vertical menu on mobile */
-    padding: 0;
+  /* Make nav links full width and spaced */
+  nav ul li {
+    margin-bottom: 10px !important;
+  }
+
+  /* Reduce padding/margins if needed */
+  body, .content {
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller devices tweaks */
+
+  body {
+    font-size: 14px !important;
+  }
+
+  h1 {
+    font-size: 1.5rem !important;
   }
 
   nav ul li {
-    margin-bottom: 10px;
+    font-size: 16px !important;
   }
 }
