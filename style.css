@@ -1003,3 +1003,49 @@ a{
     text-decoration: none;
     color: black;
 }
+    /* 1. Make body width adapt */
+body {
+  max-width: 1200px;  /* max width on big screens */
+  margin: 0 auto;     /* center content */
+  padding: 0 20px;    /* some side padding */
+  font-family: Arial, sans-serif;
+}
+
+/* 2. Images and videos scale to container */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. Flexible layout with percentages */
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;  /* wrap items on smaller screens */
+  gap: 20px;
+}
+
+/* 4. Responsive text */
+h1, h2, h3 {
+  font-size: 2rem;
+}
+
+/* 5. Media Query example for small screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    flex-direction: column; /* stack elements vertically */
+  }
+
+  nav ul {
+    flex-direction: column;  /* vertical menu on mobile */
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+}
